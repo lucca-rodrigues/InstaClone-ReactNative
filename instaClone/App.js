@@ -86,6 +86,7 @@ class App extends Component {
 
       <FlatList
       showsHorizontalScrollIndicator={false}
+      keyExtractor={(item) => item.id}
       data={this.state.feed}
       renderItem={ ({item}) => <Lista data={item} /> }
       />
