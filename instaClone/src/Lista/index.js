@@ -25,13 +25,34 @@ class Lista extends Component{
           source={{uri: this.state.feed.imgPublicacao}} // url da imagem na API
           style={styles.imgPublicacao}
         />
+          <View style={styles.row}>
+            <TouchableOpacity >
+              <Image 
+                style={styles.icone}
+                source={require('../img/like.png')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.btnSend}>
+              <Image 
+                style={styles.icone}
+                source={require('../img/send.png')}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.rodapeFeed}>
+            <Text style={styles.nomeUser}>
+              {this.state.feed.nome}
+            </Text>
+            <Text style={styles.descRodape}>
+              {this.state.feed.descricao}
+            </Text>
+          </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   areaFedd: {
-    padding: 10
   },
   nomeUser: {
     fontSize: 22,
@@ -52,6 +73,34 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 8
+  },
+  icone: {
+    width: 33,
+    height:33,
+    padding: 5
+  },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+    padding: 5
+  },
+  btnSend: {
+    paddingLeft: 10
+  },
+  rodapeFeed: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  nomeUser: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
+    paddingLeft: 5
+  },
+  descRodape: {
+    paddingLeft: 5,
+    fontSize: 15,
+    color: '#000'
   }
 
 })

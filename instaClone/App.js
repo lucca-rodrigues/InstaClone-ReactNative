@@ -67,29 +67,28 @@ class App extends Component {
   render(){
     return (
       <View style={styles.container}>
-      
-      <View style={styles.header}>
-        <TouchableOpacity>
-          <Image
-          source={require('./src/img/logo.png')}
-          style={styles.logo}
-          />
-        </TouchableOpacity>
+        <View style={styles.header}>
+          <TouchableOpacity>
+            <Image
+            source={require('./src/img/logo.png')}
+            style={styles.logo}
+            />
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Image
-          source={require('./src/img/send.png')}
-          style={styles.send}
-          />
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity>
+            <Image
+            source={require('./src/img/send.png')}
+            style={styles.send}
+            />
+          </TouchableOpacity>
+        </View>
 
-      <FlatList
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={(item) => item.id}
-      data={this.state.feed}
-      renderItem={ ({item}) => <Lista data={item} /> }
-      />
+        <FlatList
+        showsVerticalScrollIndicator={false} // remove o Srcool na lateral direita
+        keyExtractor={(item) => item.id}
+        data={this.state.feed}
+        renderItem={ ({item}) => <Lista data={item} /> }
+        />
 
       </View>
       );
